@@ -3,7 +3,7 @@
 
 const connection = require('../database/connection')
 //importando coneção com o banco de dados
-const crypto = require('crypto');
+const generateUniqueId = require('../utils/generateUniqueId');
 
 module.exports = {
     /* rota / recurso*/
@@ -17,7 +17,7 @@ module.exports = {
     async create (request, response) {
         const {name, email, whatsapp, city, uf}= request.body; //acessar dados do corpo da requisição
     
-        const id = crypto.randomBytes(4).toString('HEX'); //gerará 4 caracteres aleatorios que serao convertidos em uma string do tipo Hexadecimal
+        const id = generateUniqueId();
     
         //acessando o banco de dados e conseguir fazer as opreções
         await connection('ongs').insert({
