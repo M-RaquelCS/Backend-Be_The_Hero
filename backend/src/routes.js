@@ -2,7 +2,7 @@ const express = require('express');
 const { celebrate, Segments, Joi } = require('celebrate');
 
 const OngController = require('./controllers/OngController');
-const incidentController = require('./controllers/incidentController');
+const incidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
 
